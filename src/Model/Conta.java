@@ -69,7 +69,7 @@ public class Conta {
 	
 	@Override
 	public String toString() {
-		return "Conta [numero=" + numero + ", saldo=" + saldo + ", cliente=" + cliente + ", Tipo=" + "]";
+		return "Conta [numero=" + numero + ", saldo=" + saldo + ", cliente=" + cliente + ", Tipo=" +  "]";
 	}
 
 }

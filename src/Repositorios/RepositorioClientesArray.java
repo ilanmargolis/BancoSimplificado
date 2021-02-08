@@ -3,21 +3,21 @@ import Model.Cliente;
 
 public class RepositorioClientesArray {
 
-	private int tamanhoCache;
+	private static int tamanhoCache;
 	private static int tamanhoAtual;
 	private static Cliente clienteList[];
 
 	public RepositorioClientesArray() {
-		this.tamanhoCache = 100;
-		this.tamanhoAtual = 0;
+		tamanhoCache = 100;
+		tamanhoAtual = 0;
 
 		clienteList = new Cliente[tamanhoCache];
 
-		this.inserir(new Cliente("João", "9382773827-21"));
-		this.inserir(new Cliente("Maria", "23837737722-15"));
-		this.inserir(new Cliente("André", "93826763522-09"));
-		this.inserir(new Cliente("Gustavo", "73663552663-73"));
-		this.inserir(new Cliente("Joaquim", "565635636636-32"));
+		RepositorioClientesArray.inserir(new Cliente("João", "9382773827-21"));
+		RepositorioClientesArray.inserir(new Cliente("Maria", "23837737722-15"));
+		RepositorioClientesArray.inserir(new Cliente("André", "93826763522-09"));
+		RepositorioClientesArray.inserir(new Cliente("Gustavo", "73663552663-73"));
+		RepositorioClientesArray.inserir(new Cliente("Joaquim", "565635636636-32"));
 	}
 
 	public static Cliente getCliente(int index) {
@@ -43,11 +43,11 @@ public class RepositorioClientesArray {
 		return -1;
 	}
 
-	public boolean existe(String cpf) {
+	public static boolean existe(String cpf) {
 		return (procurarIndice(cpf) >= 0);
 	}
 
-	public Cliente procurar(String cpf) {
+	public static Cliente procurar(String cpf) {
 		int index = procurarIndice(cpf);
 
 		if (index == -1) {
@@ -68,7 +68,7 @@ public class RepositorioClientesArray {
 		}
 	}
 
-	public void remover(String cpf) {
+	public static void remover(String cpf) {
 		int index = procurarIndice(cpf);
 
 		if (index == -1) {
@@ -78,12 +78,12 @@ public class RepositorioClientesArray {
 		}
 	}
 
-	public int getTamanhoCache() {
+	public static int getTamanhoCache() {
 		return tamanhoCache;
 	}
 
-	public void setTamanhoCache(int tamanhoCache) {
-		this.tamanhoCache = tamanhoCache;
+	public static void setTamanhoCache(int tamanho) {
+		tamanhoCache = tamanho;
 	}
 
 	public static int getTamanhoAtual() {

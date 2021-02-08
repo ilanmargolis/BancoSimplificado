@@ -3,13 +3,13 @@ package Repositorios;
 import Model.Conta;
 import Model.Tipo;
 
-public class RepositorioContaArray {
+public class RepositorioContasArray {
 
-	private int tamanhoCache;
+	private static int tamanhoCache;
 	private static int tamanhoAtual;
 	private static Conta contaList[];
 
-	public RepositorioContaArray() {
+	public RepositorioContasArray() {
 		tamanhoCache = 100;
 		tamanhoAtual = 0;
 
@@ -81,8 +81,8 @@ public class RepositorioContaArray {
 		return tamanhoCache;
 	}
 
-	public void setTamanhoCache(int tamanhoCache) {
-		this.tamanhoCache = tamanhoCache;
+	public void setTamanhoCache(int tamanho) {
+		tamanhoCache = tamanho;
 	}
 
 	public static int getTamanhoAtual() {
