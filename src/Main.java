@@ -11,7 +11,7 @@ public class Main {
 		RepositorioContasArray.getConta(0).creditar(100);
 		RepositorioContasArray.getConta(1).creditar(50);
 		
-		mostraContas();
+		mostraContas(); 
 		
 		RepositorioContasArray.getConta(0).transferir(RepositorioContasArray.getConta(1), 50);
 		
