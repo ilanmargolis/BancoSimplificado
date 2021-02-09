@@ -69,7 +69,8 @@ public class Conta {
 	
 	@Override
 	public String toString() {
-		return "Conta [numero=" + numero + ", saldo=" + saldo + ", cliente=" + cliente + ", Tipo=" +  "]";
+		return getClass().getTypeName().replace("Model.", "") + 
+			   " [numero=" + numero + ", saldo=" + saldo + ", cliente=" + cliente + ", Tipo=" + getTipoCliente() + "]";
 	}
 
 }

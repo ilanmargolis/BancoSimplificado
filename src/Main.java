@@ -1,3 +1,4 @@
+import Model.Conta;
 import Repositorios.RepositorioClientesArray;
 import Repositorios.RepositorioContasArray;
 
@@ -8,6 +9,8 @@ public class Main {
 		new RepositorioClientesArray();
 		new RepositorioContasArray();
 	
+		RepositorioContasArray.gerarContas(Conta.class);
+		
 		RepositorioContasArray.getConta(0).creditar(100);
 		RepositorioContasArray.getConta(1).creditar(50);
 		

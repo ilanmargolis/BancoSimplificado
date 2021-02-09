@@ -1,10 +1,12 @@
 package Repositorios;
 
 import Model.Conta;
+import Model.ContaBonificada;
+import Model.Poupanca;
 import Model.Tipo;
 
 public class RepositorioContasArray {
- 
+
 	private static int tamanhoCache;
 	private static int tamanhoAtual;
 	private static Conta contaList[];
@@ -14,9 +16,6 @@ public class RepositorioContasArray {
 		tamanhoAtual = 0;
 
 		contaList = new Conta[tamanhoCache];
-
-		inserir(new Conta("38273-7", 0, Tipo.CLASS, RepositorioClientesArray.getCliente(0)));
-		inserir(new Conta("90551-2", 0, Tipo.VIP, RepositorioClientesArray.getCliente(1)));
 	}
 
 	public static Conta getConta(int index) {
@@ -25,6 +24,20 @@ public class RepositorioContasArray {
 
 	public static void inserir(Conta conta) {
 		contaList[tamanhoAtual++] = conta;
+	}
+
+	public static void gerarContas(Object obj) {
+
+		if (obj.equals(Conta.class)) {
+			inserir(new Conta("38273-7", 250, Tipo.CLASS, RepositorioClientesArray.getCliente(0)));
+			inserir(new Conta("90551-2", 450, Tipo.VIP, RepositorioClientesArray.getCliente(1)));
+		} else if (obj.equals(Poupanca.class)) {
+			inserir(new Poupanca("1892-2", 100, Tipo.ESPECIAL, RepositorioClientesArray.getCliente(2)));
+			inserir(new Poupanca("21093-4", 200, Tipo.VIP, RepositorioClientesArray.getCliente(3)));
+		} else if (obj.equals(ContaBonificada.class)) {
+			inserir(new ContaBonificada("54435-1", 300, Tipo.CLASS, RepositorioClientesArray.getCliente(1)));
+			inserir(new ContaBonificada("19023-3", 400, Tipo.ESPECIAL, RepositorioClientesArray.getCliente(2)));
+		}
 	}
 
 	public static int procurarIndice(String numero) {
